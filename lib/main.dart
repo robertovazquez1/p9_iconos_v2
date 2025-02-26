@@ -1,41 +1,107 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(MyIcons());
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-  // This widget is the root of your application.
+class MyIcons extends StatelessWidget {
+  const MyIcons({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      // Application name
-      title: 'Flutter Hello World',
-      // Application theme data, you can set the colors for the application as
-      // you want
-      theme: ThemeData(
-        // useMaterial3: false,
-        primarySwatch: Colors.blue,
-      ),
-      // A widget which will be started on application startup
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
-    );
-  }
-}
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text("Roberto Vazquez"),
+          titleTextStyle: TextStyle(color: Colors.white, fontSize: 20),
+          centerTitle: true,
+          backgroundColor: Colors.deepPurple,
+        ),
+        body: Column(
+          children: <Widget>[
+            // Título con nombre y número
+            Text(
+              "Roberto Vazquez 22308051281326",
+              style: TextStyle(fontSize: 20, color: Colors.black),
+            ),
+            const SizedBox(height: 50),
 
-class MyHomePage extends StatelessWidget {
-  final String title;
-  const MyHomePage({super.key, required this.title});  
+            // Primera fila de iconos con subtítulos
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: <Widget>[
+                Column(
+                  children: [
+                    Icon(
+                      Icons.home,
+                      color: Colors.black,
+                      size: 50,
+                    ),
+                    Text("Home"),
+                  ],
+                ),
+                Column(
+                  children: [
+                    Icon(
+                      Icons.theater_comedy,
+                      color: Colors.red,
+                      size: 50,
+                    ),
+                    Text("Masks"),
+                  ],
+                ),
+                Column(
+                  children: [
+                    Icon(
+                      Icons.heart_broken,
+                      color: Color(0xffff5bff),
+                      size: 50,
+                    ),
+                    Text("Heartbreaker"),
+                  ],
+                ),
+              ],
+            ),
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        // The title text which will be shown on the action bar
-        title: Text(title),
-      ),
-      body: Center(
-        child: Text(
-          'Hello, World!',
+            // Espacio entre las filas
+            SizedBox(height: 40),
+
+            // Segunda fila de iconos con subtítulos
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: <Widget>[
+                Column(
+                  children: [
+                    Icon(
+                      Icons.card_membership,
+                      color: Color(0xffa89701),
+                      size: 50,
+                    ),
+                    Text("Membership"),
+                  ],
+                ),
+                Column(
+                  children: [
+                    Icon(
+                      Icons.games_sharp,
+                      color: Colors.grey,
+                      size: 50,
+                    ),
+                    Text("D-Pad"),
+                  ],
+                ),
+                Column(
+                  children: [
+                    Icon(
+                      Icons.face_6,
+                      color: Color(0xff007bff),
+                      size: 50,
+                    ),
+                    Text("Men"),
+                  ],
+                ),
+              ],
+            ),
+          ],
         ),
       ),
     );
